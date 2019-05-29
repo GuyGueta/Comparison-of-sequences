@@ -1,0 +1,65 @@
+alexey5000, guy245
+Alexey Braver (313782542), Guy Gueta (203428222)
+EX: 2
+
+FILES:
+uthreads.cpp - The implementation of the uthreads.h file
+Thread.h - A file which contains the class that represents the Thread object.
+MyPriorityQueue.h - A helper file which contains the implementation of a priority queue that have a remove function.
+README - Contains the answers to the theoretical questions and some information about the submitted files.
+MAKEFILE - A makefile which makes a static library file named: libuthreads.a when running 'make' with no arguments.
+
+ANSWERS:
+
+Answers for the theoretical questions:
+
+Q1)
+one good example , for general use of user-level threads is :
+when the program has a specific type of scheduling that
+fits its purposes, such as scheduling a large group of task.
+that each task in the group as a different complexity ,
+and all the task are that require to be done at the same time.
+only a program that knowing  each of the specific tasks complexity,
+can based on that the estimated time needed for each task to be performed.
+and based on that knowing, she can schedule them in the best way.
+
+
+Q2)
+Advantages:
+
+1) Independence , each tab runs on a different procsess from the other , that way when a tab crush
+its does not effect the other.
+2) secured , the tabs are not sharing memory . for example , if they were sharing memory when one
+was attacked , it was easier for the attacker to reach the other tab , to the memory sharding.
+and because the memory is not shard its more safe.
+
+Disadvantages :
+
+1) for each tab, the code 'remains' in the main memory again and again,
+so making new process is far more expensive.
+
+2)  when each tab runs as separate process the,
+overhead is higher than using kernel-level threads.
+
+Q3)
+
+when we ran the application "shotwell" ,
+then wrote the command  'ps -A', we looked for shotwell process id, and found it value 11728.
+Next, we executed 'kill 11728'.
+ones we pressed enter a hardware interrupt was sent to the OS.
+the shell called the system call kill 11728 SIGTERM, when the OS got this system call it send signal SIGTEM to 11728
+"shotwell", then its SIGTERM handler was called and make some action to allow it to be terminated, then "shotwell" is
+terminated.
+
+
+Q4)
+the difference between real and virtual time is that virtual time assess only the time passed
+while the process was still running, and that real time assess the actual time .
+
+an example of using virtual time is writing a user level thread library that should give each
+process equal amount of running time so it uses the virtual time to measure each process running
+time
+
+cooking timer process is an example of using real time. the user need to know the actual time
+passed since he started cooking, so he will not burn the food.
+
